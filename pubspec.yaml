@@ -1,6 +1,6 @@
 name: flutter_regex
 description: "The regex library supports emojis, 50+ country IDs, usernames, email, URL, image formats, date-time, CVV, and whitespace patterns, and 1000+ more."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/shirsh94/flutter_regex
 
 environment:

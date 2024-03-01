@@ -108,7 +108,8 @@ bool email(String email,
 
     _index++;
 
-    while (_index < text.length && isDomain(text[_index], supportInternational)) {
+    while (
+        _index < text.length && isDomain(text[_index], supportInternational)) {
       _index++;
     }
 
