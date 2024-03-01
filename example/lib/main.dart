@@ -30,13 +30,21 @@ class _MyHomePageState extends State<MyHomePage> {
     String uri = 'https://google.com';
     String email = 'abc@gmail.com';
     String phoneNumber = '+91 9999999999';
+    String currencySymbol = '€';
+    String currencyCode = 'EUR';
     String emoji = '😊';
     String creditCard = '1234 5678 9123 4567';
-    bool isUriMatch = uri.isUrl();
+
+    bool isUriMatch = uri.isUrl(); //true
     bool isEmailMatch = email.isEmail();
-    bool isPhoneNumberMatch = phoneNumber.isPhone();
-    bool isEmojiMatch = emoji.isEmoji();
-    bool isCreditCardMatch = creditCard.isCreditCard();
+    String emailSt = 'user@sub.exämple.com';
+    bool isStEmailMatch = emailSt.isEmail(supportTopLevelDomain: true); //true
+    bool isPhoneNumberMatch = phoneNumber.isPhone(); //true
+    bool isEmojiMatch = emoji.isEmoji(); //true
+    bool isCurrencySymbolMatch = currencySymbol.isCurrencySymbolRegex(); //true
+    bool isCurrencyCodeMatch = currencyCode.isCurrencyCodePattern(); //true
+    bool isCreditCardMatch = creditCard.isCreditCard(); //true
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -57,7 +65,15 @@ class _MyHomePageState extends State<MyHomePage> {
               elevation: 5,
               child: ListTile(
                 title: Text(
-                  'is Email - $email: $isEmailMatch',
+                  'is basic Email check - $email: $isEmailMatch',
+                ),
+              ),
+            ),
+            Card(
+              elevation: 5,
+              child: ListTile(
+                title: Text(
+                  'is Email - $emailSt: $isStEmailMatch',
                 ),
               ),
             ),
@@ -85,6 +101,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+             Card(
+              elevation: 5,
+              child: ListTile(
+                title: Text(
+                  'is Currency Code Match - $currencyCode: $isCurrencyCodeMatch',
+                ),
+              ),
+            ),
+             Card(
+              elevation: 5,
+              child: ListTile(
+                title: Text(
+                  'is Currency Symbol Match - $currencySymbol: $isCurrencySymbolMatch',
+                ),
+              ),
+            ),
+
           ],
         ),
       ),

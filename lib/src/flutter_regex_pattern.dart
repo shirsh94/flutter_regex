@@ -104,21 +104,6 @@ This regex provides a validation pattern for Discord usernames, ensuring they me
   static String usernameDiscord =
       r'^(?!.*(discord|[`]{3}))(?!here|everyone).[^\#\@\:]{0,30}(#[0-9]{4})?$';
 
-/*For validating email addresses, a common regex pattern is used. Here's a simple version:
-
-Regex Pattern: `^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$`
-
-Explanation:
-- `^` asserts the start of the line
-- `[a-zA-Z0-9+_.-]+` matches one or more of the allowed characters for the username part of the email address
-- `@` matches the '@' symbol
-- `[a-zA-Z0-9.-]+` matches one or more of the allowed characters for the domain part of the email address
-- `$` asserts the end of the line
-
-This regex pattern provides basic validation for email addresses, ensuring they have a username part, an '@' symbol, and a domain part.*/
-  static String email =
-      r"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$";
-
 /*For validating URLs, a regex pattern can be used. Here's a simple version:
 
 Regex Pattern: `^(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?$`
@@ -301,10 +286,6 @@ This regex pattern provides a flexible validation for phone numbers that can sta
 
   /// Passport No. regex
   static String passport = r'^(?!^0+$)[a-zA-Z0-9]{6,9}$';
-
-  /// Currency regex
-  static String currency =
-      r'^(S?\$|\₩|Rp|\¥|\€|\₹|\₽|fr|R$|R)?[ ]?[-]?([0-9]{1,3}[,.]([0-9]{3}[,.])*[0-9]{3}|[0-9]+)([,.][0-9]{1,2})?( ?(USD?|AUD|NZD|CAD|CHF|GBP|CNY|EUR|JPY|IDR|MXN|NOK|KRW|TRY|INR|RUB|BRL|ZAR|SGD|MYR))?$';
 
   /// Numeric Only regex
   static String numericOnly = r'^\d+$';
@@ -3572,4 +3553,40 @@ This regex pattern provides a flexible validation for phone numbers that can sta
 
   // Bombay Stock Exchange (BSE):
   static String bseRegex = r'^BSE$';
+
+  //Matching Palindromes:
+  static String palindromes = r'^(.?)(.?)(.?)(.?)(.?).?\5\4\3\2\1$';
+
+  //Matching Prime Numbers:
+  static String primeNumbers = r'^1?$|^(11+?)\1+$';
+
+  //Matching Balanced Parentheses:
+  static String balancedParentheses = r'^(\()?\1*(?(1)(?R)|)$';
+
+  //Matching Morse Code:
+  static String morseCode = r'^([.-]+|\/)+$';
+
+  //Matching Fibonacci Numbers:
+  static String fibonacciNumbers = r'^((0?)|((1|10)(?=(\3+(?!\3))+$)))+$';
+
+  //  **SSID Names**:
+  static String ssidNames = r'^[ -~]{1,32}$';
+
+  // **MAC Addresses**:
+  static String macAddresses = r'^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$';
+
+  // **WEP Keys**:
+  static String wepKeys = r'^[0-9A-Fa-f]{10}(|-[0-9A-Fa-f]{26})$';
+
+  // **WPA Keys**:
+  static String wpaKeys = r'^[ -~]{8,63}$';
+
+  // **Network Names**:
+  static String networkNames = r'^[a-zA-Z0-9 ]+$';
+
+  // **Signal Strength**:
+  static String signalStrength = r'^-?\d{1,3} dBm$';
+
+  // **wifi Channel Numbers**:
+  static String wifiChannelNumbers = r'^(1[ -]14|36[ -]165)$';
 }

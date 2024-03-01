@@ -1,3 +1,4 @@
+import 'package:flutter_regex/src/flutter_regex_country.dart';
 import 'package:flutter_regex/src/flutter_regex_pattern.dart';
 import 'package:flutter_regex/src/flutter_regex_validator.dart';
 
@@ -53,43 +54,11 @@ extension StringExtensions on String {
         RegexPattern.usernameDiscord,
       );
 
-  /// Email regex
-  ///
-  /// References: [RFC2822 Email Validation](https://regexr.com/2rhq7) by Triple-axis
-  bool isEmail() => RegexVal.hasMatch(
-        this,
-        RegexPattern.email,
-      );
-
   /// URL regex
   ///
-  /// Eg:
-  /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
-  /// - https://www.youtube.com/watch?v=COYFmbVEH0k
-  /// - https://stackoverflow.com/questions/53913192/flutter-change-the-width-of-an-alertdialog/57688555
   bool isUrl() => RegexVal.hasMatch(this, RegexPattern.url);
 
   /// URI regex
-  ///
-  /// Examples:
-  /// - https://medium.com/@diegoveloper/flutter-widget-size-and-position-b0a9ffed9407
-  /// - https://www.youtube.com/watch?v=COYFmbVEH0k
-  /// - https://stackoverflow.com/questions/53913192/flutter-change-the-width-of-an-alertdialog/57688555
-  /// - http://192.168.0.1:8080
-  /// - https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top
-  /// - http://a/b/c/d;p?q
-  /// - twitter://
-  /// - fb://profile/33138223345
-  /// - mailto:John.Doe@example.com
-  /// - ldap://[2001:db8::7]/c=GB?objectClass?one
-  /// - tel:+1-816-555-1212
-  /// - telnet://192.0.2.16:80/
-  /// - news:comp.infosystems.www.servers.unix
-  /// - urn:oasis:names:specification:docbook:dtd:xml:4.1.2
-  ///
-  /// Reference:
-  /// https://datatracker.ietf.org/doc/html/rfc3986
-  /// https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
   bool isUri() => RegexVal.hasMatch(
         this,
         RegexPattern.uri,
@@ -101,11 +70,11 @@ extension StringExtensions on String {
   /// It is possible to add whitespace separating digit with "+" or "(+XX)"
   ///
   /// Examples:
-  /// - 05555555555
-  /// - +555 5555555555
-  /// - (+123) 5555555555
-  /// - (555) 5555555555
-  /// - +5555 5555555555
+  /// - 04444444445
+  /// - +444 4444444445
+  /// - (+123) 4444444445
+  /// - (444) 4444444445
+  /// - +4445 4444444445
   bool isPhone() => RegexVal.hasMatch(
         this,
         RegexPattern.phone,
@@ -202,12 +171,12 @@ extension StringExtensions on String {
   /// - YYYY-MM-DD HH:mm:ss.fff
   ///
   /// Examples:
-  /// - 2020-04-27 08:14:39.977
-  /// - 2020-04-27T08:14:39.977
-  /// - 2020-04-27 01:14:39.977Z
-  /// - 2020-04-27 08:14:39
-  /// - 2020-04-27T08:14:39
-  /// - 2020-04-27 01:14:39Z
+  /// - 2021-04-27 03:16:39.977
+  /// - 2021-04-27T03:16:39.977
+  /// - 2021-04-27 01:16:39.977Z
+  /// - 2021-04-27 03:16:39
+  /// - 2021-04-27T03:16:39
+  /// - 2021-04-27 01:16:39Z
   bool isDateTimeUTC() => RegexVal.hasMatch(
         this,
         RegexPattern.dateTimeUTC,
@@ -231,7 +200,7 @@ extension StringExtensions on String {
   /// - 01/Oct/04 01:23
   /// - May 16, 2023
   /// - 07:00 PM
-  /// - Wednesday, 21 May 2023
+  /// - Wednesday, 24 June 2023
   /// - 01/25
   /// - 00:30:20
   /// - Wed, Jan 26
@@ -306,12 +275,6 @@ extension StringExtensions on String {
   bool isPassport() => RegexVal.hasMatch(
         this,
         RegexPattern.passport,
-      );
-
-  /// Currency regex
-  bool isCurrency() => RegexVal.hasMatch(
-        this,
-        RegexPattern.currency,
       );
 
   /// Numeric Only regex
@@ -434,7 +397,6 @@ extension StringExtensions on String {
 
   /// UUID
   ///
-  /// Reference: https://ihateregex.io/expr/uuid/
   bool isUUID() => RegexVal.hasMatch(
         this,
         RegexPattern.uuid,
@@ -446,12 +408,6 @@ extension StringExtensions on String {
   /// Starts with 1, 3, or bc1.
   /// It contains digits in the range of 0 to 9.
   /// The uppercase letter O and the uppercase letter I are not used to avoid visual ambiguity.
-  ///
-  /// References:
-  /// https://bitcoin.design/guide/glossary/address/
-  /// https://ihateregex.io/expr/bitcoin-address/
-  /// https://www.geeksforgeeks.org/regular-expression-to-validate-a-bitcoin-address/
-  /// https://en.bitcoin.it/wiki/Invoice_address
   bool isBitcoinAddress() => RegexVal.hasMatch(
         this,
         RegexPattern.bitcoinAddress,
@@ -464,9 +420,6 @@ extension StringExtensions on String {
   /// 62 alphanumeric characters, case insensitive
   /// Starts with bc1p.
   ///
-  /// References:
-  /// https://bitcoin.design/guide/glossary/address/
-  /// https://blog.trezor.io/bitcoin-addresses-and-how-to-use-them-35e7312098ff
   bool isBitcoinTaprootAddress() => RegexVal.hasMatch(
         this,
         RegexPattern.bitcoinTaprootAddress,
@@ -661,7 +614,7 @@ extension StringExtensions on String {
   /// rgbColorCode
   ///
   /// Validates if the given string is a valid HSL color code.
-  /// HSL color codes are representations of colors in the HSL (Hue, Saturation, Lightness) color model.
+  /// HSL color codes are representations of colors in the c (Hue, Saturation, Lightness) color model.
   bool isHslColorCode() => RegexVal.hasMatch(
         this,
         RegexPattern.hslColorCode,
@@ -3691,4 +3644,52 @@ extension StringExtensions on String {
   //The Bombay Stock Exchange (BSE) is an Indian stock exchange located in Mumbai, Maharashtra,
   // and is the 10th largest stock exchange in the world by market capitalization.
   bool isBseRegex() => RegexVal.hasMatch(this, RegexPattern.bseRegex);
+
+  /// Checks if the string matches the palindromes regex pattern.
+  bool isPalindromes() => RegexVal.hasMatch(this, RegexPattern.palindromes);
+
+  /// Checks if the string matches the prime numbers regex pattern.
+  bool isPrimeNumbers() => RegexVal.hasMatch(this, RegexPattern.primeNumbers);
+
+  /// Checks if the string matches the balanced parentheses regex pattern.
+  bool isBalancedParentheses() =>
+      RegexVal.hasMatch(this, RegexPattern.balancedParentheses);
+
+  /// Checks if the string matches the Morse code regex pattern.
+  bool isMorseCode() => RegexVal.hasMatch(this, RegexPattern.morseCode);
+
+  /// Checks if the string matches the Fibonacci numbers regex pattern.
+  bool isFibonacciNumbers() =>
+      RegexVal.hasMatch(this, RegexPattern.fibonacciNumbers);
+
+  /// Checks if the string matches the SSID names regex pattern.
+  bool isSsidNames() => RegexVal.hasMatch(this, RegexPattern.ssidNames);
+
+  /// Checks if the string matches the MAC addresses regex pattern.
+  bool isMacAddresses() => RegexVal.hasMatch(this, RegexPattern.macAddresses);
+
+  /// Checks if the string matches the WEP keys regex pattern.
+  bool isWepKeys() => RegexVal.hasMatch(this, RegexPattern.wepKeys);
+
+  /// Checks if the string matches the WPA keys regex pattern.
+  bool isWpaKeys() => RegexVal.hasMatch(this, RegexPattern.wpaKeys);
+
+  /// Checks if the string matches the network names regex pattern.
+  bool isNetworkNames() => RegexVal.hasMatch(this, RegexPattern.networkNames);
+
+  /// Checks if the string matches the signal strength regex pattern.
+  bool isSignalStrength() =>
+      RegexVal.hasMatch(this, RegexPattern.signalStrength);
+
+  /// Checks if the string matches the channel numbers regex pattern.
+  bool isWifiChannelNumbers() =>
+      RegexVal.hasMatch(this, RegexPattern.wifiChannelNumbers);
+
+  // Support 110+ country Currency Symbol
+  bool isCurrencySymbolRegex() =>
+      RegexVal.hasMatch(this, RegexCountryPattern.currencySymbolRegex);
+
+  // Support 110+ country Currency Code
+  bool isCurrencyCodePattern() =>
+      RegexVal.hasMatch(this, RegexCountryPattern.currencyCodePattern);
 }

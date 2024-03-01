@@ -1,3 +1,22 @@
+## 0.0.2
+
+- Added support for 110+ country currency symbols and codes. This update includes a comprehensive
+  list of currency codes and symbols for over 110 countries, allowing for easier integration of
+  currency-related functionality into Flutter apps. The list is based on the official abbreviations,
+  symbols, and codes used internationally, providing developers with a reliable reference for
+  currency-related operations.
+
+- Updated the email validator to provide enhanced functionality for validating the format of email
+  addresses. The validator now includes options to support top-level domain names (e.g., ".com", "
+  .org") and international characters, offering developers more flexibility in validating a wider
+  range of email addresses. This update improves the accuracy and versatility of email validation in
+  Flutter apps, ensuring that email addresses are correctly formatted according to the specified
+  criteria.
+
+- Added new regular expressions for matching palindromes, prime numbers, balanced parentheses, Morse
+  code, Fibonacci numbers, SSID names, MAC addresses, WEP keys, WPA keys, network names, signal
+  strength, and WiFi channel numbers.
+
 ## 0.0.1
 
 - Regex pattern for emojis(😊).
