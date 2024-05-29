@@ -49,8 +49,7 @@ Explanation:
 - `$` asserts the end of the line
 
 This regex provides a more specific validation for usernames, enforcing the use of only one symbol in a row and allowing symbols only in the middle of the name.*/
-  static String usernameV2 =
-      r'^(?!.*[_\.\-]{2})@?[a-zA-Z0-9][a-zA-Z0-9_\.\-]+[a-zA-Z0-9]$';
+  static String usernameV2 = r'^(?!.*[_\.\-]{2})@?[a-zA-Z0-9][a-zA-Z0-9_\.\-]+[a-zA-Z0-9]$';
 
   /// Username (Google) regex
   ///
@@ -58,8 +57,7 @@ This regex provides a more specific validation for usernames, enforcing the use 
   /// Contain letters (a-z), numbers (0-9), and period (.).
   /// Must start and end with with letters or numbers.
   /// Can't have consecutive period (.).
-  static String usernameGoogle =
-      r'^(?!.*\.\.)[a-zA-Z0-9][a-zA-Z0-9\.]{4,28}[a-zA-Z0-9]$';
+  static String usernameGoogle = r'^(?!.*\.\.)[a-zA-Z0-9][a-zA-Z0-9\.]{4,28}[a-zA-Z0-9]$';
 
 /*### Instagram Username Regular Expression
 
@@ -101,8 +99,7 @@ Explanation:
 - `$` asserts the end of the line
 
 This regex provides a validation pattern for Discord usernames, ensuring they meet the platform's requirements.*/
-  static String usernameDiscord =
-      r'^(?!.*(discord|[`]{3}))(?!here|everyone).[^\#\@\:]{0,30}(#[0-9]{4})?$';
+  static String usernameDiscord = r'^(?!.*(discord|[`]{3}))(?!here|everyone).[^\#\@\:]{0,30}(#[0-9]{4})?$';
 
 /*For validating URLs, a regex pattern can be used. Here's a simple version:
 
@@ -136,8 +133,7 @@ Explanation:
 - `$` asserts the end of the line
 
 This regex pattern provides a comprehensive validation for URIs, including URLs, by capturing different parts of the URI such as scheme, domain, port, path, query string, and fragment identifier.*/
-  static String uri =
-      r"^(?!.*[?@!&`()*+,;=_\-~\]\[#$]{2})(?!.*[?@!&`()*+,;=_.\-~:?\[\]]$)(?!.*(\/\.|\.\/))(\w+:(\/\/)?)\S*$";
+  static String uri = r"^(?!.*[?@!&`()*+,;=_\-~\]\[#$]{2})(?!.*[?@!&`()*+,;=_.\-~:?\[\]]$)(?!.*(\/\.|\.\/))(\w+:(\/\/)?)\S*$";
 
 /*For validating phone numbers with the specified criteria, you can use the following regex pattern:
 
@@ -151,8 +147,7 @@ Explanation:
 - `$` asserts the end of the line
 
 This regex pattern provides a flexible validation for phone numbers that can start with "0", "+", "+XX ", or "(+XX )" and allow whitespace separating digits.*/
-  static String phone =
-      r'^(0|\+|(\+[0-9]{2,4}|\(\+?[0-9]{2,4}\)) ?)([0-9]*|\d{2,4}-\d{2,4}(-\d{2,4})?)$';
+  static String phone = r'^(0|\+|(\+[0-9]{2,4}|\(\+?[0-9]{2,4}\)) ?)([0-9]*|\d{2,4}-\d{2,4}(-\d{2,4})?)$';
 
   /// Hexadecimal regex
   static String hexadecimal = r'^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$';
@@ -215,8 +210,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   /// - 2020-04-27 08:14:39
   /// - 2020-04-27T08:14:39
   /// - 2020-04-27 01:14:39Z
-  static String dateTimeUTC =
-      r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}(.\d{3,})?[zZ]?$';
+  static String dateTimeUTC = r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}(.\d{3,})?[zZ]?$';
 
   /// Regular expression for matching various date and time formats.
   ///
@@ -258,16 +252,13 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   static String cvv = r'^\d{3}$';
 
   /// SHA1 regex
-  static String sha1 =
-      r'^(([A-Fa-f0-9]{2}\:){19}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{40})$';
+  static String sha1 = r'^(([A-Fa-f0-9]{2}\:){19}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{40})$';
 
   /// SHA256 regex
-  static String sha256 =
-      r'^([A-Fa-f0-9]{2}\:){31}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{64}$';
+  static String sha256 = r'^([A-Fa-f0-9]{2}\:){31}[A-Fa-f0-9]{2}|[A-Fa-f0-9]{64}$';
 
   /// SSN (Social Security Number) regex
-  static String ssn =
-      r'^(?!0{3}|6{3}|9[0-9]{2})[0-9]{3}-?(?!0{2})[0-9]{2}-?(?!0{4})[0-9]{4}$';
+  static String ssn = r'^(?!0{3}|6{3}|9[0-9]{2})[0-9]{3}-?(?!0{2})[0-9]{2}-?(?!0{4})[0-9]{4}$';
 
   /// IPv4 regex
   static String ipv4 = r'^(?:(?:^|\.)(?:2(?:5[0-5]|[0-4]\d)|1?\d?\d)){4}$';
@@ -277,12 +268,10 @@ This regex pattern provides a flexible validation for phone numbers that can sta
       r'^((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))$';
 
   /// ISBN 10 & 13 regex
-  static String isbn =
-      r'^(ISBN(\-1[03])?[:]?[ ]?)?(([0-9Xx][- ]?){13}|([0-9Xx][- ]?){10})$';
+  static String isbn = r'^(ISBN(\-1[03])?[:]?[ ]?)?(([0-9Xx][- ]?){13}|([0-9Xx][- ]?){10})$';
 
   /// Github repository regex
-  static String github =
-      r'^((git|ssh|http(s)?)|(git@[\w\.]+))(:(\/\/)?)([\w\.@\:/\-~]+)(\.git)(\/)?$';
+  static String github = r'^((git|ssh|http(s)?)|(git@[\w\.]+))(:(\/\/)?)([\w\.@\:/\-~]+)(\.git)(\/)?$';
 
   /// Passport No. regex
   static String passport = r'^(?!^0+$)[a-zA-Z0-9]{6,9}$';
@@ -297,8 +286,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   static String alphaNumericOnly = r'^[a-zA-Z0-9]+$';
 
   /// Alphabet, Numeric, Symbol Only regex
-  static String alphaNumericSymbolOnly =
-      r'''^[a-zA-Z0-9!@#$%^&*()-_+=~{}:";',./|\\\[\]<>?]+$''';
+  static String alphaNumericSymbolOnly = r'''^[a-zA-Z0-9!@#$%^&*()-_+=~{}:";',./|\\\[\]<>?]+$''';
 
   /// No Whitespace regex
   /// Contains: Alphabet, Numeric, & Symbol
@@ -326,8 +314,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   ///
   /// Must contains at least: 1 letter & 1 number
   /// Minimum characters: 8
-  static String passwordNormal1Whitespace =
-      r'^(?=.*[A-Za-z])(?=.*\d)[\S ]{8,}$';
+  static String passwordNormal1Whitespace = r'^(?=.*[A-Za-z])(?=.*\d)[\S ]{8,}$';
 
   /// Password (Normal) Regex
   ///
@@ -341,8 +328,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   /// No symbolic characters allowed
   /// Must contains: 1 letter & 1 number
   /// Minimum characters: 8
-  static String passwordNormal2Whitespace =
-      r'^(?=.*[A-Za-z])(?=.*\d)[a-zA-Z0-9 ]{8,}$';
+  static String passwordNormal2Whitespace = r'^(?=.*[A-Za-z])(?=.*\d)[a-zA-Z0-9 ]{8,}$';
 
   /// Password (Normal) Regex
   ///
@@ -355,27 +341,23 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter & 1 number
   /// Minimum characters: 8
-  static String passwordNormal3Whitespace =
-      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\S ]{8,}$';
+  static String passwordNormal3Whitespace = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\S ]{8,}$';
 
   /// Password (Hard) Regex
   ///
   /// No whitespace allowed
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
   /// Minimum characters: 8
-  static String passwordHard =
-      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])\S{8,}$';
+  static String passwordHard = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])\S{8,}$';
 
   /// Password (Hard) Regex
   ///
   /// Must contains at least: 1 uppercase letter, 1 lowecase letter, 1 number, & 1 special character (symbol)
   /// Minimum characters: 8
-  static String passwordHardWhitespace =
-      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[\S ]{8,}$';
+  static String passwordHardWhitespace = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[\S ]{8,}$';
 
   /// UUID
-  static String uuid =
-      r'^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$';
+  static String uuid = r'^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$';
 
   /// Bitcoin Address
   ///
@@ -384,8 +366,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   /// It contains digits in the range of 0 to 9.
   /// The uppercase letter O and the uppercase letter I are not used to avoid visual ambiguity.
   ///
-  static String bitcoinAddress =
-      r'^(?![13].{34,})(bc1|[13])[a-km-zA-HJ-NP-Z0-9]{25,39}$';
+  static String bitcoinAddress = r'^(?![13].{34,})(bc1|[13])[a-km-zA-HJ-NP-Z0-9]{25,39}$';
 
   /// Bitcoin (Taproot) Address
   ///
@@ -439,12 +420,10 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   static String dnaSequences = r"^[ATCG]+$";
 
   ///   Time (HH:MM 12-hour format)
-  static String time12h =
-      r'^(1[0-2]|0?[1-9]):([0-5]\d)\s?(AM|PM|am|pm)$'; // Matches a time in 12-hour format HH:MM AM/PM
+  static String time12h = r'^(1[0-2]|0?[1-9]):([0-5]\d)\s?(AM|PM|am|pm)$'; // Matches a time in 12-hour format HH:MM AM/PM
 
   ///   Time (HH:MM 24-hour format)
-  static String time24h =
-      r'^([01]\d|2[0-3]):([0-5]\d)$'; // Matches a time in 24-hour format HH:MM
+  static String time24h = r'^([01]\d|2[0-3]):([0-5]\d)$'; // Matches a time in 24-hour format HH:MM
 
   /// Matches a positive integer
   static String positiveInteger = r'^\d+$';
@@ -483,8 +462,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   static String mimeType = r'^[\w\-]+\/[\w\-+\.]+(;[\w\-\.=]+)?$';
 
   /// Phone Number (U.S. format)
-  static String phoneNumberUS =
-      r'^\+?1?\s*\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$';
+  static String phoneNumberUS = r'^\+?1?\s*\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$';
 
   /// JSON Object
   static String jsonObject = r'^\{(?:[^{}]|(?R))*\}$';
@@ -563,8 +541,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   static String jdbcConnectionString = r'\bjdbc:[a-zA-Z0-9]+://[^/]+/\w+\b';
 
   // Pangram (Sentence with all letters)
-  static String pangram =
-      r'\b(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}\b';
+  static String pangram = r'\b(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}\b';
 
   // Indian Aadhar Card Number (12 digits):
   static String aadharCardNumberIndia = r'^\d{4}\s\d{4}\s\d{4}$';
@@ -582,15 +559,13 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   static String voterIdNumberIndia = r'^[A-Z0-9]{10}$';
 
   // Indian GST Number (Alphanumeric, 15 characters):
-  static String gstNumberIndia =
-      r'^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[0-9]{1}[A-Z]{1}[0-9A-Z]{1}$';
+  static String gstNumberIndia = r'^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[0-9]{1}[A-Z]{1}[0-9A-Z]{1}$';
 
   // Indian IFSC Code (Alphanumeric, 11 characters):
   static String ifscCodeIndia = r'^[A-Z]{4}0[A-Z0-9]{6}$';
 
   // Indian Vehicle Registration Number (Alphanumeric, varies by state):
-  static String vehicleRegNumberIndia =
-      r'^[A-Z]{2}\s[0-9]{2}\s[A-Z]{1,2}\s[0-9]{1,4}$';
+  static String vehicleRegNumberIndia = r'^[A-Z]{2}\s[0-9]{2}\s[A-Z]{1,2}\s[0-9]{1,4}$';
 
   // Indian Ration Card Number (Alphanumeric, varies by state):
   static String rationCardNumberIndia = r'^[A-Z]{2}\s[0-9]{12}$';
@@ -840,8 +815,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
   static String panRussia = r'^\d{11}$';
 
   /// CURP (Clave Única de Registro de Población) Number:
-  static String curpMexico =
-      r'^[A-Z]{4}\d{6}[HM][A-Z]{2}[B-DF-HJ-NP-TV-Z]{3}[0-9A-Z]{1}$';
+  static String curpMexico = r'^[A-Z]{4}\d{6}[HM][A-Z]{2}[B-DF-HJ-NP-TV-Z]{3}[0-9A-Z]{1}$';
 
   /// Voter ID Card (Credencial para Votar) Number:
   static String voterIdMexico = r'^\d{18}$';
@@ -1181,8 +1155,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
 
   // **United Kingdom**
   ///National Insurance Number:
-  static String nationalInsuranceUK =
-      r'^[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z]\d{6}[A-D]$';
+  static String nationalInsuranceUK = r'^[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z]\d{6}[A-D]$';
 
   ///Passport Number:
   static String passportNumberUK = r'^[0-9]{9}$';
@@ -1244,8 +1217,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
 
   /// **Italy**
   /// National Identification Number (Codice Fiscale):
-  static String codiceFiscaleItaly =
-      r'^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$';
+  static String codiceFiscaleItaly = r'^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$';
 
   /// Passport Number:
   static String passportNumberItaly = r'^[A-Z]{2}\d{7}$';
@@ -1493,7 +1465,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
 
   // **Uganda**
   /// National Identification Number:
-  static String nationalIdUganda = r'^\d{13}$';
+  static String nationalIdUganda = r'^[A-Z0-9]{14}$';
 
   /// Passport Number:
   static String passportNumberUganda = r'^[A-Z]{2}\d{6}$';
@@ -3098,8 +3070,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
 
   // Vehicle Registration Number:
 
-  static String vehicleRegNumberBosniaHerzegovina =
-      r'^\d{2}-\d{4}-\d{3}-\d{3}$';
+  static String vehicleRegNumberBosniaHerzegovina = r'^\d{2}-\d{4}-\d{3}-\d{3}$';
 
   // Student ID Number:
 
