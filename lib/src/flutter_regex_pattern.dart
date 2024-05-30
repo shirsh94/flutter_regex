@@ -1493,7 +1493,7 @@ This regex pattern provides a flexible validation for phone numbers that can sta
 
   // **Uganda**
   /// National Identification Number:
-  static String nationalIdUganda = r'^\d{13}$';
+  static String nationalIdUganda = r'^[A-Z0-9]{14}$';
 
   /// Passport Number:
   static String passportNumberUganda = r'^[A-Z]{2}\d{6}$';
